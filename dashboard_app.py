@@ -75,3 +75,4 @@ st.divider()
 
 st.subheader("📄 Detalhamento Completo")
 st.dataframe(df)
+
