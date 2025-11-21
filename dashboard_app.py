@@ -14,7 +14,7 @@ st.title("💜 Dashboard Financeiro — Controle Inteligente de Gastos")
 # ================================
 # CONFIGURAÇÃO DO GOOGLE DRIVE
 # ================================
-URL_PLANILHA = https://docs.google.com/spreadsheets/d/1aqYw6-t6HyGe-eOQXuR5bC3AQABT37cc/export?format=xlsx
+URL_PLANILHA = "https://docs.google.com/spreadsheets/d/1aqYw6-t6HyGe-eOQXuR5bC3AQABT37cc/export?format=xlsx"
 
 @st.cache_data
 def carregar_dados_drive():
@@ -84,5 +84,6 @@ st.pyplot(fig4)
 st.divider()
 st.subheader("📄 Detalhamento Completo")
 st.dataframe(df)
+
 
 
