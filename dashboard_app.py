@@ -12,7 +12,6 @@ st.title("💜 Dashboard Financeiro — Controle Inteligente de Gastos")
 # ===============================
 # 1) CARREGAR PLANILHA
 # ===============================
-@st.cache_data
 def carregar_dados():
     arquivo = st.file_uploader("Envie o arquivo 'dados_processados.xlsx'", type=["xlsx"])
 
@@ -121,3 +120,4 @@ st.pyplot(fig4)
 st.divider()
 st.subheader("📄 Detalhamento Completo")
 st.dataframe(df)
+
