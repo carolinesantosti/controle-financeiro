@@ -14,20 +14,18 @@ st.title("💜 Dashboard Financeiro — Controle Inteligente de Gastos")
 # ===============================
 @st.cache_data
 def carregar_dados():
+    arquivo = st.file_uploader("Envie o arquivo 'dados_processados.xlsx'", type=["xlsx"])
+
+    if arquivo is None:
+        st.warning("Nenhuma planilha encontrada. Envie o arquivo para continuar.")
+        st.stop()
+
     try:
-        arquivo = st.file_uploader("Envie o arquivo 'dados_processados.xlsx'", type=["xlsx"])
-
-        if arquivo is None:
-            st.warning("Nenhuma planilha encontrada. Envie o arquivo para continuar.")
-            st.stop()
-
         df = pd.read_excel(arquivo)
-
         return df
     except Exception as e:
         st.error(f"Erro ao ler a planilha: {e}")
         return None
-
 
 df = carregar_dados()
 
@@ -123,4 +121,3 @@ st.pyplot(fig4)
 st.divider()
 st.subheader("📄 Detalhamento Completo")
 st.dataframe(df)
-
